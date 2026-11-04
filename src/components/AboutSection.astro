@@ -1,0 +1,124 @@
+---
+import { Target, Compass, ShieldCheck, Cpu, CheckCircle2, ArrowRight } from 'lucide-astro';
+---
+
+<section id="about" class="bg-cloud py-16 md:py-24 border-b border-hairline scroll-mt-20">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Eyebrow & Title -->
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-canvas border border-fog text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+        <span>About Us</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
+        Who We Are
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-charcoal leading-relaxed">
+        DarkGrid Operations is a specialized service provider focused on professional cleaning solutions for data centers and mission-critical infrastructure.
+      </p>
+    </div>
+
+    <!-- Content Grid: 2 Columns (Image + Overview & Pillars) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+      
+      <!-- Left: Real Staff Photography (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col">
+        <div class="relative h-full min-h-[380px] rounded-[16px] overflow-hidden bg-canvas shadow-soft-lift border border-fog group">
+          <img
+            src="/assets/personal-limpiando.png"
+            alt="DarkGrid Operations technician cleaning mission-critical rack equipment"
+            class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-102"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex flex-col justify-end p-6 text-white">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-primary text-white text-[11px] font-semibold tracking-wider uppercase mb-2.5 w-fit shadow-xs">
+              <ShieldCheck class="w-3.5 h-3.5" />
+              <span>Controlled Operational Protocol</span>
+            </div>
+            <p class="text-sm text-white/90">
+              Beyond conventional cleaning: focused on equipment protection, static prevention, and sensitive electrical boundaries.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Detailed Description & Mission/Vision Cards (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+        
+        <!-- Descriptive Paragraph Box -->
+        <div class="bg-canvas p-6 sm:p-8 rounded-[16px] shadow-soft-lift border border-hairline">
+          <h3 class="text-xl font-medium text-ink mb-3">
+            More Than Conventional Cleaning
+          </h3>
+          <p class="text-charcoal text-sm sm:text-base leading-relaxed">
+            We recognize that high-density computing and mission-critical environments require specialized expertise. Our team approaches each project with an emphasis on <strong>equipment protection, contamination control, workplace safety, and operational coordination</strong>.
+          </p>
+          <p class="mt-3 text-graphite text-sm sm:text-base leading-relaxed">
+            Our goal is to help clients maintain clean, controlled, and professionally managed facilities throughout every stage of their projects — from construction and pre-commissioning through live turnover and ongoing operational cycles.
+          </p>
+
+          <!-- Key Pillars Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-fog">
+            <div class="flex flex-col">
+              <span class="text-xs text-graphite uppercase font-medium">Focus</span>
+              <span class="text-sm font-semibold text-ink mt-0.5">Protection</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs text-graphite uppercase font-medium">Standard</span>
+              <span class="text-sm font-semibold text-ink mt-0.5">Safety 1st</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs text-graphite uppercase font-medium">Execution</span>
+              <span class="text-sm font-semibold text-ink mt-0.5">Coordination</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs text-graphite uppercase font-medium">Outcome</span>
+              <span class="text-sm font-semibold text-ink mt-0.5">Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mission & Vision 2-Column Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          
+          <!-- Our Mission Card -->
+          <div class="bg-canvas p-6 rounded-[16px] shadow-soft-lift border border-hairline flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+            <div>
+              <div class="w-10 h-10 rounded-[8px] bg-primary-soft flex items-center justify-center text-primary mb-4">
+                <Target class="w-5 h-5" />
+              </div>
+              <h4 class="text-lg font-medium text-ink mb-2">Our Mission</h4>
+              <p class="text-xs sm:text-sm text-charcoal leading-relaxed">
+                To deliver reliable, specialized cleaning solutions for data centers and mission-critical facilities through safe work practices, attention to detail, and a commitment to operational excellence.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-fog flex items-center text-xs font-semibold text-primary uppercase tracking-wider">
+              <span>Operational Excellence</span>
+            </div>
+          </div>
+
+          <!-- Our Vision Card -->
+          <div class="bg-canvas p-6 rounded-[16px] shadow-soft-lift border border-hairline flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-1 bg-ink"></div>
+            <div>
+              <div class="w-10 h-10 rounded-[8px] bg-cloud flex items-center justify-center text-ink mb-4 border border-fog">
+                <Compass class="w-5 h-5" />
+              </div>
+              <h4 class="text-lg font-medium text-ink mb-2">Our Vision</h4>
+              <p class="text-xs sm:text-sm text-charcoal leading-relaxed">
+                To become a trusted partner in the data center industry, recognized for quality, reliability, safety, and our ability to support the evolving needs of mission-critical environments.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-fog flex items-center text-xs font-semibold text-ink uppercase tracking-wider">
+              <span>Industry Benchmark</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

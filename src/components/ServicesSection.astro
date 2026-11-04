@@ -1,0 +1,231 @@
+---
+import {
+  Server,
+  HardHat,
+  ClipboardCheck,
+  Layers,
+  ArrowUpFromLine,
+  CalendarClock,
+  SlidersHorizontal,
+  CheckCircle2,
+  ShieldAlert,
+  ArrowRight
+} from 'lucide-astro';
+
+const services = [
+  {
+    id: 1,
+    title: 'Specialized Data Center Equipment Cleaning',
+    category: 'Mission-Critical Core',
+    description: 'Professional cleaning of equipment exteriors and approved accessible surfaces within strict operational restrictions.',
+    badge: 'Flagship Service',
+    icon: Server,
+    featured: true,
+    subItems: [
+      'Generators and UPS systems',
+      'Power Distribution Units (PDUs)',
+      'Server racks and IT equipment',
+      'Cable trays and electrical cabinets',
+      'CRAH units and mechanical equipment',
+      'Associated mission-critical infrastructure',
+    ],
+    disclaimer: 'All cleaning activities are performed within approved work scopes and applicable equipment restrictions.',
+  },
+  {
+    id: 2,
+    title: 'Construction & Post-Construction Cleaning',
+    category: 'Build & Expansion',
+    description: 'Removal of dust, debris, and construction-related contaminants to support clean and organized environments during construction and project completion.',
+    icon: HardHat,
+    featured: false,
+    highlights: ['Micro-dust removal', 'Debris mitigation', 'Pre-inspection cleanup'],
+  },
+  {
+    id: 3,
+    title: 'Pre-Commissioning & Turnover Cleaning',
+    category: 'Inspection & Handover',
+    description: 'Specialized cleaning support to prepare designated equipment and facility areas for inspection, commissioning, client handover, and operational readiness.',
+    icon: ClipboardCheck,
+    featured: false,
+    highlights: ['Audit-ready readiness', 'Client handover standards', 'Commissioning support'],
+  },
+  {
+    id: 4,
+    title: 'Raised Floor & Subfloor Cleaning',
+    category: 'Airflow & Plenum',
+    description: 'Cleaning of raised-floor surfaces, approved underfloor areas, and accessible spaces where dust and contaminants may accumulate.',
+    icon: Layers,
+    featured: false,
+    highlights: ['Plenum contamination control', 'Zinc whisker awareness', 'Anti-static procedures'],
+  },
+  {
+    id: 5,
+    title: 'Overhead & High-Level Cleaning',
+    category: 'Structural Surfaces',
+    description: 'Controlled cleaning of accessible overhead structures, cable trays, supports, and elevated surfaces using approved access methods.',
+    icon: ArrowUpFromLine,
+    featured: false,
+    highlights: ['Suspended cable raceways', 'Ceiling structure dust removal', 'Safe access methods'],
+  },
+  {
+    id: 6,
+    title: 'Preventive & Routine Cleaning',
+    category: 'Ongoing Facility Health',
+    description: 'Scheduled cleaning programs designed to maintain facility cleanliness and support ongoing operational requirements.',
+    icon: CalendarClock,
+    featured: false,
+    highlights: ['Tailored intervals', 'Continuous containment', 'Zero interruption to uptime'],
+  },
+  {
+    id: 7,
+    title: 'Customized Project Cleaning Support',
+    category: 'Tailored Solutions',
+    description: 'Flexible cleaning solutions adapted to project schedules, facility conditions, client requirements, and operational restrictions.',
+    icon: SlidersHorizontal,
+    featured: false,
+    highlights: ['Shift flexibility', 'Emergency response support', 'Site-specific protocol adherence'],
+  },
+];
+---
+
+<section id="services" class="bg-canvas py-16 md:py-24 border-b border-hairline scroll-mt-20">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-cloud border border-fog text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+          <span>Our Services</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
+          Specialized Data Center & Facility Cleaning
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-charcoal">
+          Engineered solutions for live halls, white spaces, mechanical corridors, and mission-critical turnovers.
+        </p>
+      </div>
+
+      <div class="shrink-0">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-deep text-white text-xs font-semibold tracking-[0.7px] uppercase rounded-[4px] shadow-sm transition-all"
+        >
+          <span>Request Service Scope</span>
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Featured Service #1: Specialized Equipment Cleaning (Hero Card) -->
+    <div class="bg-cloud rounded-[16px] p-6 sm:p-10 border border-fog shadow-soft-lift mb-8 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-2 h-full bg-primary"></div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-primary text-white text-xs font-semibold uppercase tracking-wider mb-4">
+            <span>Service 01</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-medium text-ink leading-snug">
+            Specialized Data Center Equipment Cleaning
+          </h3>
+          <p class="mt-3 text-charcoal text-sm sm:text-base leading-relaxed">
+            Professional cleaning of equipment exteriors and approved accessible surfaces. Every procedure is strictly calibrated to preserve electrical integrity and avoid unplanned disruptions.
+          </p>
+
+          <div class="mt-6 p-4 rounded-[8px] bg-canvas border border-fog flex items-start gap-3">
+            <ShieldAlert class="w-5 h-5 text-primary shrink-0 mt-0.5" />
+            <p class="text-xs text-graphite leading-relaxed">
+              <strong class="font-semibold text-ink">Scope Notice:</strong> All cleaning activities are performed strictly within approved work scopes and applicable equipment restrictions.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-graphite mb-4">
+            Approved Accessible Equipment Surfaces Included:
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {services[0].subItems?.map((item) => (
+              <div class="bg-canvas p-3.5 rounded-[8px] border border-fog flex items-center gap-3 shadow-xs">
+                <div class="w-5 h-5 rounded-full bg-primary-soft flex items-center justify-center text-primary shrink-0">
+                  <CheckCircle2 class="w-3.5 h-3.5" />
+                </div>
+                <span class="text-xs sm:text-sm font-medium text-ink">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-fog">
+            <span class="text-xs text-graphite">Precision chemical controls & HEPA filtration standard.</span>
+            <a
+              href="#contact"
+              class="text-xs font-semibold text-primary hover:text-primary-deep uppercase tracking-wider inline-flex items-center gap-1.5"
+            >
+              <span>Consult on equipment guidelines</span>
+              <ArrowRight class="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Remaining 6 Services Grid (3 columns on desktop) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.slice(1).map((s) => {
+        const IconComponent = s.icon;
+        return (
+          <div class="bg-canvas p-6 sm:p-7 rounded-[16px] border border-hairline shadow-soft-lift shadow-soft-lift-hover flex flex-col justify-between group">
+            <div>
+              <!-- Top Row: Icon & Number -->
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-[8px] bg-cloud group-hover:bg-primary-soft text-ink group-hover:text-primary flex items-center justify-center transition-colors border border-fog">
+                  <IconComponent class="w-6 h-6" />
+                </div>
+                <span class="text-xs font-mono font-semibold text-steel group-hover:text-primary transition-colors">
+                  0{s.id}
+                </span>
+              </div>
+
+              <!-- Category Eyebrow -->
+              <span class="text-[11px] font-semibold tracking-wider uppercase text-primary">
+                {s.category}
+              </span>
+
+              <!-- Title (display-sm style: 20-22px, weight 500) -->
+              <h3 class="text-lg sm:text-xl font-medium text-ink mt-1.5 mb-3 leading-snug">
+                {s.title}
+              </h3>
+
+              <!-- Body Description -->
+              <p class="text-xs sm:text-sm text-charcoal leading-relaxed mb-5">
+                {s.description}
+              </p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="pt-4 border-t border-fog">
+              <ul class="space-y-2 mb-4">
+                {s.highlights?.map((h) => (
+                  <li class="flex items-center gap-2 text-xs text-graphite">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="#contact"
+                class="inline-flex items-center text-xs font-semibold text-primary hover:text-primary-deep uppercase tracking-wider gap-1 group-hover:underline"
+              >
+                <span>Book Service Scope</span>
+                <ArrowRight class="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>
+

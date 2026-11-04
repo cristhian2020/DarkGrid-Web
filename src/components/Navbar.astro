@@ -1,0 +1,126 @@
+---
+import { Menu, X, ArrowRight, ShieldCheck } from 'lucide-astro';
+
+const navLinks = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About Us' },
+  { href: '#services', label: 'Services' },
+  { href: '#approach', label: 'Our Approach' },
+  { href: '#why-us', label: 'Why DarkGrid' },
+  { href: '#careers', label: 'Careers' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-canvas/95 backdrop-blur-md border-b border-hairline transition-shadow duration-200" id="main-header">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#home" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded">
+      <img
+        src="/assets/Emblema.png"
+        alt="DarkGrid Emblem"
+        class="h-10 w-10 sm:h-11 sm:w-11 object-contain transition-transform group-hover:scale-105"
+      />
+      <div class="flex flex-col">
+        <span class="text-ink font-semibold tracking-wider text-base sm:text-lg leading-tight group-hover:text-primary transition-colors">
+          DARKGRID
+        </span>
+        <span class="text-[10px] sm:text-xs font-medium tracking-[0.2em] text-graphite uppercase leading-none">
+          OPERATIONS
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-7">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm font-medium text-ink/80 hover:text-primary transition-colors py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-200"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Desktop Action Button -->
+    <div class="hidden lg:flex items-center gap-4">
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center px-5 py-2.5 h-11 bg-primary hover:bg-primary-deep text-white font-semibold text-xs tracking-[0.7px] uppercase rounded-[4px] shadow-sm transition-all duration-150 active:scale-[0.98] group"
+      >
+        <span>Request a Quote</span>
+        <ArrowRight class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5" />
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button
+      type="button"
+      id="mobile-menu-btn"
+      class="lg:hidden p-2 rounded-[4px] text-ink hover:text-primary hover:bg-cloud focus:outline-none focus:ring-2 focus:ring-primary"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+    >
+      <Menu class="w-6 h-6" id="menu-icon-open" />
+      <X class="w-6 h-6 hidden" id="menu-icon-close" />
+    </button>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden bg-canvas border-b border-hairline px-6 pt-2 pb-6 shadow-xl transition-all"
+  >
+    <div class="flex flex-col space-y-3 pt-2">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-nav-link text-base font-medium text-ink hover:text-primary py-2 px-3 rounded hover:bg-cloud transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-4 border-t border-hairline flex flex-col gap-3">
+        <a
+          href="#contact"
+          class="mobile-nav-link inline-flex items-center justify-center w-full px-5 py-3 h-11 bg-primary hover:bg-primary-deep text-white font-semibold text-xs tracking-[0.7px] uppercase rounded-[4px] transition-colors"
+        >
+          <span>Request a Quote</span>
+          <ArrowRight class="w-4 h-4 ml-2" />
+        </a>
+        <div class="flex items-center justify-center gap-2 text-xs text-graphite pt-2">
+          <ShieldCheck class="w-4 h-4 text-primary" />
+          <span>Mission-Critical Certified Work Scope</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMenu() {
+    const isExpanded = menuBtn?.getAttribute('aria-expanded') === 'true';
+    menuBtn?.setAttribute('aria-expanded', String(!isExpanded));
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  }
+
+  menuBtn?.addEventListener('click', toggleMenu);
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!menu?.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+</script>
+

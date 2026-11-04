@@ -1,0 +1,123 @@
+---
+import {
+  Crosshair,
+  ShieldCheck,
+  Eye,
+  CalendarCheck2,
+  Handshake,
+  CheckCircle2,
+  Award
+} from 'lucide-astro';
+
+const reasons = [
+  {
+    title: 'Specialized Focus',
+    description: 'Services tailored to the unique conditions of data centers and mission-critical facilities. We do not do residential or generic janitorial work — our focus is purely mission-critical.',
+    icon: Crosshair,
+  },
+  {
+    title: 'Safety-Driven Approach',
+    description: 'Careful planning and hazard awareness integrated into daily operations. We protect human life, electrical continuity, and expensive hardware with pre-task analysis.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Attention to Detail',
+    description: 'A controlled cleaning approach that prioritizes sensitive equipment and surrounding infrastructure. Clean-room grade tools, anti-static measures, and HEPA particulate capture.',
+    icon: Eye,
+  },
+  {
+    title: 'Flexible Project Support',
+    description: 'Services adapted to construction schedules, commissioning milestones, and operational needs. Able to deploy in off-hours, maintenance windows, or weekend sprints.',
+    icon: CalendarCheck2,
+  },
+  {
+    title: 'Professional Coordination',
+    description: 'Clear communication and active collaboration with project and facility management teams. Daily sign-offs, photo logs, and formal shift debriefs.',
+    icon: Handshake,
+  },
+];
+---
+
+<section id="why-us" class="bg-cloud py-16 md:py-24 border-b border-hairline scroll-mt-20">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-canvas border border-fog text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+        <span>Why Choose Us</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
+        Why DarkGrid Operations?
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-charcoal">
+        Data centers require precision, disciplined coordination, and technicians who respect live infrastructure. Here is how DarkGrid delivers value.
+      </p>
+    </div>
+
+    <!-- 5 Value Proposition Grid (3 top, 2 bottom centered or full-width spread) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {reasons.slice(0, 3).map((r, i) => {
+        const Icon = r.icon;
+        return (
+          <div class="bg-canvas p-6 sm:p-8 rounded-[16px] border border-hairline shadow-soft-lift flex flex-col justify-between group hover:border-primary/40 transition-colors">
+            <div>
+              <div class="w-12 h-12 rounded-[8px] bg-primary-soft text-primary flex items-center justify-center mb-5">
+                <Icon class="w-6 h-6" />
+              </div>
+              <h3 class="text-xl font-medium text-ink mb-3">{r.title}</h3>
+              <p class="text-sm text-charcoal leading-relaxed">{r.description}</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-fog flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
+              <CheckCircle2 class="w-4 h-4" />
+              <span>Core Operational Value</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      {reasons.slice(3).map((r) => {
+        const Icon = r.icon;
+        return (
+          <div class="bg-canvas p-6 sm:p-8 rounded-[16px] border border-hairline shadow-soft-lift flex flex-col justify-between group hover:border-primary/40 transition-colors">
+            <div>
+              <div class="w-12 h-12 rounded-[8px] bg-cloud text-ink flex items-center justify-center mb-5 border border-fog group-hover:bg-primary-soft group-hover:text-primary transition-colors">
+                <Icon class="w-6 h-6" />
+              </div>
+              <h3 class="text-xl font-medium text-ink mb-3">{r.title}</h3>
+              <p class="text-sm text-charcoal leading-relaxed">{r.description}</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-fog flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
+              <CheckCircle2 class="w-4 h-4" />
+              <span>Operational Advantage</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Assurance Banner -->
+    <div class="mt-10 bg-canvas rounded-[16px] p-6 sm:p-8 border border-fog shadow-soft-lift flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-[8px] bg-primary text-white flex items-center justify-center shrink-0">
+          <Award class="w-6 h-6" />
+        </div>
+        <div>
+          <h4 class="text-base font-semibold text-ink">Built on Strict Accountability</h4>
+          <p class="text-xs sm:text-sm text-graphite mt-0.5">
+            Every shift includes a dedicated site lead, documented risk assessment, and transparent communication.
+          </p>
+        </div>
+      </div>
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center px-6 py-2.5 h-11 bg-primary hover:bg-primary-deep text-white text-xs font-semibold tracking-[0.7px] uppercase rounded-[4px] shrink-0 transition-colors"
+      >
+        <span>Partner With Us</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+

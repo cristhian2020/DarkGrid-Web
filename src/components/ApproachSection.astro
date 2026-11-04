@@ -1,0 +1,119 @@
+---
+import { ShieldCheck, MessageSquareText, Users, FileSpreadsheet, CheckCircle2 } from 'lucide-astro';
+
+const approachSteps = [
+  {
+    step: '01',
+    title: 'Safety Planning',
+    desc: 'Review of task-specific hazards, site requirements, and applicable safety procedures before work begins.',
+    icon: ShieldCheck,
+    tag: 'Pre-Task Protocol',
+  },
+  {
+    step: '02',
+    title: 'Daily Safety Briefings',
+    desc: 'Pre-task meetings and toolbox talks to communicate hazards, work activities, and required precautions.',
+    icon: MessageSquareText,
+    tag: 'Toolbox Briefing',
+  },
+  {
+    step: '03',
+    title: 'Project Coordination',
+    desc: 'Ongoing communication with clients, project managers, and facility representatives to coordinate access, schedules, and daily priorities.',
+    icon: Users,
+    tag: 'Active Alignment',
+  },
+  {
+    step: '04',
+    title: 'Quality & Documentation',
+    desc: 'Daily activity records, progress updates, and work documentation to support accountability and project requirements.',
+    icon: FileSpreadsheet,
+    tag: 'Compliance & Audit',
+  },
+];
+---
+
+<section id="approach" class="bg-cloud py-16 md:py-24 border-b border-hairline scroll-mt-20">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-canvas border border-fog text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+        <span>Our Approach</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
+        Safety First. Quality Always.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-charcoal leading-relaxed">
+        Our work is guided by a structured approach to safety, planning, and communication. In mission-critical environments, execution discipline is non-negotiable.
+      </p>
+    </div>
+
+    <!-- 2 Column Section: Approach Cards + Visual Showcase -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+      
+      <!-- Left: 4 Structured Pillars (7 cols) -->
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {approachSteps.map((step) => {
+          const Icon = step.icon;
+          return (
+            <div class="bg-canvas p-6 rounded-[16px] border border-hairline shadow-soft-lift flex flex-col justify-between relative overflow-hidden group hover:border-primary/40 transition-colors">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <div class="w-10 h-10 rounded-[8px] bg-primary-soft text-primary flex items-center justify-center">
+                    <Icon class="w-5 h-5" />
+                  </div>
+                  <span class="text-xs font-mono font-bold text-graphite bg-cloud px-2 py-0.5 rounded">
+                    Phase {step.step}
+                  </span>
+                </div>
+
+                <span class="text-[11px] font-semibold tracking-wider uppercase text-primary">
+                  {step.tag}
+                </span>
+
+                <h3 class="text-lg font-medium text-ink mt-1 mb-2">
+                  {step.title}
+                </h3>
+
+                <p class="text-xs sm:text-sm text-charcoal leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+
+              <div class="mt-5 pt-3 border-t border-fog flex items-center gap-1.5 text-xs text-graphite">
+                <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+                <span>Strict procedural adherence</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Right: Supporting Photo with Frame (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col">
+        <div class="relative h-full min-h-[380px] rounded-[16px] overflow-hidden bg-canvas shadow-soft-lift border border-fog group">
+          <img
+            src="/assets/personal-working.png"
+            alt="DarkGrid Operations personnel coordinating mission-critical work"
+            class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-102"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex flex-col justify-end p-6 text-white">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-primary text-white text-[11px] font-semibold tracking-wider uppercase mb-2.5 w-fit shadow-xs">
+              <ShieldCheck class="w-3.5 h-3.5" />
+              <span>Field Execution Standards</span>
+            </div>
+            <h4 class="text-lg font-medium text-white leading-snug">
+              Coordinated Operations with Zero Incident Goal
+            </h4>
+            <p class="text-xs text-white/90 mt-1.5 leading-relaxed">
+              Every technician operates under verified scope boundaries with certified PPE and equipment isolation protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

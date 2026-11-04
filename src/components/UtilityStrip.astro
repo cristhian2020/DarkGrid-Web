@@ -1,0 +1,40 @@
+---
+import { Phone, Mail, ShieldAlert, Sparkles } from 'lucide-astro';
+---
+
+<div class="bg-ink text-white/90 text-xs md:text-sm border-b border-white/10 select-none">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
+    <!-- Left: Mission Statement & Focus -->
+    <div class="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
+      <span class="inline-flex items-center gap-1.5 font-medium text-white">
+        <!-- <Sparkles class="w-3.5 h-3.5 text-primary-bright shrink-0" /> -->
+        <span class="hidden sm:inline">DARKGRID OPERATIONS:</span>
+        <span class="text-white/80">Solutions for a Stronger Tomorrow</span>
+      </span>
+      <span class="hidden md:inline-block text-white/30">•</span>
+      <span class="hidden md:inline text-white/70">Mission-Critical Facility Services</span>
+    </div>
+
+    <!-- Right: Quick Direct Contact -->
+    <div class="flex items-center gap-4 sm:gap-6 shrink-0 text-xs sm:text-sm">
+      <a
+        href="tel:+17039390923"
+        class="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors duration-150"
+        title="Call DarkGrid Operations"
+      >
+        <Phone class="w-3.5 h-3.5 text-primary-bright" />
+        <span class="font-medium">+1 (703) 939-0923</span>
+      </a>
+
+      <a
+        href="mailto:info@darkgridoperations.com"
+        class="hidden sm:inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors duration-150"
+        title="Email DarkGrid Operations"
+      >
+        <Mail class="w-3.5 h-3.5 text-primary-bright" />
+        <span>info@darkgridoperations.com</span>
+      </a>
+    </div>
+  </div>
+</div>
+

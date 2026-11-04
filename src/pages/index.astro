@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UtilityStrip from '../components/UtilityStrip.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import ApproachSection from '../components/ApproachSection.astro';
+import IndustriesSection from '../components/IndustriesSection.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import SafetyCommitment from '../components/SafetyCommitment.astro';
+import CareersSection from '../components/CareersSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="DarkGrid Operations | Specialized Data Center Cleaning & Mission-Critical Facility Services"
+  description="Specialized cleaning services for data centers and mission-critical facilities. Supporting construction, commissioning, project turnover, and ongoing operations with precision, safety, and reliability."
+>
+  <!-- Top Utility Strip -->
+  <UtilityStrip />
+
+  <!-- Main Navigation Header -->
+  <Navbar />
+
+  <!-- Main Content Flow -->
+  <main>
+    <!-- Hero Section -->
+    <Hero />
+
+    <!-- About Us: Who We Are, Mission & Vision -->
+    <AboutSection />
+
+    <!-- Our 7 Core Services -->
+    <ServicesSection />
+
+    <!-- Our Approach: Safety First. Quality Always. -->
+    <ApproachSection />
+
+    <!-- Industries & Environments We Support -->
+    <IndustriesSection />
+
+    <!-- Why DarkGrid? Key Differentiators -->
+    <WhyChooseUs />
+
+    <!-- Dark Navy Slab: Commitment to Safety & Quality -->
+    <SafetyCommitment />
+
+    <!-- Careers & Opportunities -->
+    <CareersSection />
+
+    <!-- Contact Us & Request a Quote Form -->
+    <ContactSection />
+  </main>
+
+  <!-- Dark Footer -->
+  <Footer />
+</Layout>

@@ -1,0 +1,133 @@
+---
+import {
+  Server,
+  ShieldCheck,
+  Building2,
+  ClipboardCheck,
+  Activity,
+  ArrowRight
+} from 'lucide-astro';
+
+const environments = [
+  {
+    title: 'Hyperscale & Enterprise Data Centers',
+    description: 'Specialized cleaning services for large-scale data center facilities, high-density server halls, and massive supporting infrastructure.',
+    icon: Server,
+    badge: 'Large Scale',
+    features: ['Multi-megawatt facility support', 'Aisle containment cleaning', 'Sub-floor plenum sanitation'],
+  },
+  {
+    title: 'Mission-Critical Facilities',
+    description: 'Controlled cleaning solutions for environments containing sensitive electrical, mechanical, and IT equipment requiring strict electrostatic control.',
+    icon: ShieldCheck,
+    badge: 'Critical Infrastructure',
+    features: ['High-voltage switchgear rooms', 'UPS & battery room maintenance', 'Cooling infrastructure areas'],
+  },
+  {
+    title: 'Data Center Construction Projects',
+    description: 'Cleaning support throughout construction, installation, and project completion to prevent particulate migration into active zones.',
+    icon: Building2,
+    badge: 'Build Phase',
+    features: ['Post-rough-in cleaning', 'Dust barrier maintenance', 'Clean-build transition'],
+  },
+  {
+    title: 'Commissioning & Facility Turnover',
+    description: 'Detailed cleaning services to support Level 4/Level 5 integrated system testing, client handover, and operational readiness.',
+    icon: ClipboardCheck,
+    badge: 'Readiness & QA',
+    features: ['White glove inspection ready', 'HEPA vacuuming', 'Turnover punch list resolution'],
+  },
+  {
+    title: 'Operational Data Centers',
+    description: 'Scheduled and preventive cleaning services tailored to live facility requirements, security clearances, and approved work areas.',
+    icon: Activity,
+    badge: '24/7 Operations',
+    features: ['Live environment precautions', 'Scheduled maintenance windows', 'Zero downtime tolerance'],
+  },
+];
+---
+
+<section id="industries" class="bg-canvas py-16 md:py-24 border-b border-hairline scroll-mt-20">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-cloud border border-fog text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+        <span>Sectors & Applications</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
+        Industries & Environments We Support
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-charcoal">
+        Engineered for facilities where cleanliness directly impacts operational uptime, thermal efficiency, and warranty compliance.
+      </p>
+    </div>
+
+    <!-- Environments Grid (5 items: 3 in top row, 2 in bottom row centered or 5-grid) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {environments.map((env, index) => {
+        const Icon = env.icon;
+        return (
+          <div class={`bg-canvas p-6 sm:p-7 rounded-[16px] border border-hairline shadow-soft-lift shadow-soft-lift-hover flex flex-col justify-between group ${index === 3 ? 'lg:col-span-1' : ''}`}>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-[8px] bg-cloud group-hover:bg-primary-soft text-ink group-hover:text-primary flex items-center justify-center transition-colors border border-fog">
+                  <Icon class="w-6 h-6" />
+                </div>
+                <span class="text-[11px] font-semibold uppercase tracking-wider text-graphite bg-cloud px-2.5 py-1 rounded-[4px] border border-fog">
+                  {env.badge}
+                </span>
+              </div>
+
+              <h3 class="text-lg sm:text-xl font-medium text-ink mb-3 leading-snug">
+                {env.title}
+              </h3>
+
+              <p class="text-xs sm:text-sm text-charcoal leading-relaxed mb-6">
+                {env.description}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-fog">
+              <span class="text-[11px] font-bold text-graphite uppercase tracking-wider block mb-2">Key Focus Areas:</span>
+              <ul class="space-y-1.5">
+                {env.features.map((f) => (
+                  <li class="text-xs text-graphite flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      })}
+
+      <!-- Callout Tile to complete the 6-pack grid visually -->
+      <div class="bg-cloud p-6 sm:p-7 rounded-[16px] border border-fog flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-primary">Need Site Evaluation?</span>
+          <h3 class="text-xl font-medium text-ink mt-2 mb-3">
+            Custom Facility Walkthrough
+          </h3>
+          <p class="text-xs sm:text-sm text-charcoal leading-relaxed">
+            Have a specialized facility with non-standard layout or strict environmental compliance requirements? We conduct pre-task assessments to map work zones.
+          </p>
+        </div>
+
+        <div class="pt-6">
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 px-5 py-2.5 bg-ink hover:bg-black text-white text-xs font-semibold tracking-[0.7px] uppercase rounded-[4px] transition-colors"
+          >
+            <span>Schedule Site Assessment</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+

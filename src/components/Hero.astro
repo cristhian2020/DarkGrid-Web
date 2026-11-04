@@ -1,0 +1,137 @@
+---
+import { Shield, Sparkles, CheckCircle, ArrowRight, PhoneCall, Layers, Server } from 'lucide-astro';
+---
+
+<section id="home" class="relative overflow-hidden bg-canvas py-12 md:py-20 lg:py-24 border-b border-hairline">
+  <!-- Decorative Background Architectural Elements -->
+  <div class="absolute inset-0 pointer-events-none opacity-40">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-soft/30 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 -left-20 w-80 h-80 bg-cloud rounded-full blur-2xl"></div>
+  </div>
+
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Column: Copy & Value Proposition (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+        
+        <!-- Eyebrow Badge Pill -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cloud border border-fog text-xs font-semibold uppercase tracking-wider text-charcoal">
+          <span>Mission-Critical Facility Services</span>
+          <span class="text-steel">|</span>
+          <span class="text-primary font-bold">Solutions for a Stronger Tomorrow</span>
+        </div>
+
+        <!-- Main Display Headline (weight 500 as per design.md) -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[62px] font-medium tracking-tight text-ink leading-[1.05]">
+          Precision Cleaning for <span class="text-primary relative inline-block">Mission-Critical<span class="absolute bottom-1 left-0 w-full h-[3px] bg-primary/20"></span></span> Environments
+        </h1>
+
+        <!-- Subtitle & Lead Paragraph -->
+        <p class="text-lg md:text-xl text-charcoal font-normal leading-relaxed max-w-2xl">
+          At <strong class="font-semibold text-ink">DarkGrid Operations</strong>, we provide specialized cleaning services for data centers and mission-critical facilities.
+        </p>
+
+        <p class="text-sm md:text-base text-graphite leading-relaxed max-w-2xl">
+          Our services support construction, commissioning, project turnover, and ongoing operations, with a relentless focus on safety, contamination control, and attention to detail. We understand the critical importance of working around sensitive electrical, mechanical, and IT infrastructure.
+        </p>
+
+        <!-- Core Pillars Strip: Precision. Safety. Reliability. -->
+        <div class="flex flex-wrap items-center gap-3 sm:gap-6 py-2 border-y border-fog w-full max-w-2xl">
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded bg-primary-soft flex items-center justify-center text-primary">
+              <CheckCircle class="w-4 h-4" />
+            </div>
+            <span class="text-sm font-semibold tracking-wide text-ink uppercase">Precision</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded bg-primary-soft flex items-center justify-center text-primary">
+              <Shield class="w-4 h-4" />
+            </div>
+            <span class="text-sm font-semibold tracking-wide text-ink uppercase">Safety</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded bg-primary-soft flex items-center justify-center text-primary">
+              <Server class="w-4 h-4" />
+            </div>
+            <span class="text-sm font-semibold tracking-wide text-ink uppercase">Reliability</span>
+          </div>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center px-7 py-3 h-12 bg-primary hover:bg-primary-deep text-white font-semibold text-xs sm:text-sm tracking-[0.7px] uppercase rounded-[4px] shadow-sm transition-all duration-150 active:scale-[0.98] group"
+          >
+            <span>Request a Quote</span>
+            <ArrowRight class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+          </a>
+
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center px-6 py-3 h-12 bg-canvas hover:bg-cloud text-ink border border-ink/20 hover:border-ink font-semibold text-xs sm:text-sm tracking-[0.7px] uppercase rounded-[4px] transition-all duration-150"
+          >
+            <span>Explore Services</span>
+          </a>
+
+          <a
+            href="tel:+17039390923"
+            class="inline-flex items-center justify-center gap-2 px-4 py-3 h-12 text-charcoal hover:text-primary text-xs sm:text-sm font-medium transition-colors"
+          >
+            <PhoneCall class="w-4 h-4 text-primary" />
+            <span>+1 (703) 939-0923</span>
+          </a>
+        </div>
+
+        <!-- Trust Note -->
+        <p class="text-xs text-graphite flex items-center gap-1.5 pt-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span>Prioritizing careful planning, professional execution & facility coordination.</span>
+        </p>
+
+      </div>
+
+      <!-- Right Column: Featured Image with Architectural Chevrons (5 cols) -->
+      <div class="lg:col-span-5 relative">
+        <!-- Chevron Signature Elements from design.md -->
+        <div
+          class="hidden sm:block absolute -top-5 -left-5 w-14 h-32 bg-primary z-0 opacity-90 transform -skew-x-[20deg]"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="hidden sm:block absolute -bottom-5 -right-5 w-14 h-32 bg-primary z-0 opacity-90 transform -skew-x-[20deg]"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Main Photo Frame (rounded.xl = 16px as per design.md) -->
+        <div class="relative z-10 rounded-[16px] overflow-hidden bg-cloud shadow-soft-lift border border-hairline group">
+          <img
+            src="/assets/gente-limpiando.jpg"
+            alt="DarkGrid Operations personnel precision cleaning data center infrastructure"
+            class="w-full h-[380px] sm:h-[460px] object-cover object-center transition-transform duration-500 group-hover:scale-102"
+          />
+
+          <!-- Gradient Overlay on Bottom -->
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent flex flex-col justify-end p-6 text-white">
+            <div class="bg-primary/90 text-white font-semibold text-[11px] tracking-wider uppercase px-2.5 py-1 rounded-[2px] w-fit mb-2">
+              Controlled Clean Environment
+            </div>
+            <h3 class="text-lg font-medium text-white leading-snug">
+              Specialized Contamination Control
+            </h3>
+            <p class="text-xs text-white/80 mt-1 font-normal">
+              Equipped for live server halls, subfloors, and turnover commissioning inspections.
+            </p>
+          </div>
+        </div>
+
+       
+
+      </div>
+
+    </div>
+  </div>
+</section>

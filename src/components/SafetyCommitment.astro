@@ -1,0 +1,118 @@
+---
+import {
+  ShieldAlert,
+  ClipboardList,
+  UsersRound,
+  Lock,
+  FileCheck2,
+  CheckCircle,
+  ArrowRight
+} from 'lucide-astro';
+
+const commitments = [
+  {
+    title: 'Pre-Task Safety Planning & Hazard Assessments',
+    desc: 'Identification of energized circuits, arc flash boundaries, elevated zones, and chemical compatibility before breaking any seal.',
+    icon: ShieldAlert,
+  },
+  {
+    title: 'Daily Safety Briefings & Toolbox Talks',
+    desc: 'Morning safety alignment addressing shift objectives, emergency egress, stop-work authority, and environmental precautions.',
+    icon: UsersRound,
+  },
+  {
+    title: 'Coordination with Facility Management',
+    desc: 'Seamless collaboration with site engineers, general contractors, and operations leads to ensure total work window alignment.',
+    icon: Lock,
+  },
+  {
+    title: 'Equipment Protection & Contamination Control',
+    desc: 'Deploying non-conductive tools, ULPA/HEPA filtration, and strict ESD controls to prevent particulate ingress into sensitive electronics.',
+    icon: ShieldAlert,
+  },
+  {
+    title: 'Daily Work Documentation & Progress Tracking',
+    desc: 'Verifiable records, shift turnover logs, punch lists, and digital photographic confirmation of completed work areas.',
+    icon: FileCheck2,
+  },
+  {
+    title: 'Quality Inspections & Continuous Improvement',
+    desc: 'Post-cleaning inspection routines, particulate count verification, and rigorous quality audits prior to client sign-off.',
+    icon: CheckCircle,
+  },
+];
+---
+
+<section class="bg-ink text-white py-16 md:py-24 relative overflow-hidden border-b border-white/10">
+  <!-- Subtle Grid Background -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Top Eyebrow & Headings -->
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-white/10 text-primary-bright text-xs font-semibold uppercase tracking-wider mb-3">
+        <span>Operational Standard</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-white leading-tight">
+        Our Commitment to Safety & Quality
+      </h2>
+      <p class="mt-2 text-lg sm:text-xl text-primary-bright font-medium">
+        Safety First. Precision in Every Detail.
+      </p>
+      <p class="mt-4 text-base text-white/80 leading-relaxed">
+        At DarkGrid Operations, safety and quality are fundamental to every project. We prioritize careful planning, hazard identification, contamination control, and clear communication to support safe and efficient cleaning activities in mission-critical environments.
+      </p>
+    </div>
+
+    <!-- 6 Commitments Grid (2 cols on tablet, 3 cols on desktop) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {commitments.map((c, i) => {
+        const Icon = c.icon;
+        return (
+          <div class="bg-ink-soft/80 border border-white/10 rounded-[16px] p-6 sm:p-7 flex flex-col justify-between hover:border-primary-bright/50 transition-colors group">
+            <div>
+              <div class="w-10 h-10 rounded-[6px] bg-white/10 text-primary-bright flex items-center justify-center mb-4 group-hover:bg-primary-bright group-hover:text-white transition-colors">
+                <Icon class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-medium text-white mb-2 leading-snug">
+                {c.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-white/70 leading-relaxed">
+                {c.desc}
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-white/50">
+              <span>Standard 0{i + 1}</span>
+              <span class="text-primary-bright">Verified</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Bottom Safety Assurance Strip -->
+    <div class="mt-12 p-6 sm:p-8 rounded-[16px] bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-[6px] bg-primary-bright text-white flex items-center justify-center shrink-0">
+          <ShieldAlert class="w-6 h-6" />
+        </div>
+        <div>
+          <h4 class="text-base font-semibold text-white">Full Stop-Work Authority Empowered</h4>
+          <p class="text-xs sm:text-sm text-white/70 mt-0.5">
+            Every technician is authorized and trained to pause work immediately if any safety hazard or equipment ambiguity arises.
+          </p>
+        </div>
+      </div>
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center px-6 py-3 h-11 bg-primary-bright hover:bg-primary text-white text-xs font-semibold tracking-[0.7px] uppercase rounded-[4px] shrink-0 transition-colors"
+      >
+        <span>Discuss Protocols With Us</span>
+        <ArrowRight class="w-4 h-4 ml-2" />
+      </a>
+    </div>
+
+  </div>
+</section>
+

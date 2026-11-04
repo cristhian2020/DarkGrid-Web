@@ -1,0 +1,354 @@
+---
+import {
+  Mail,
+  Phone,
+  Clock,
+  Send,
+  Building,
+  ShieldCheck,
+  CheckCircle2,
+  AlertCircle,
+  Sparkles,
+  MapPin
+} from 'lucide-astro';
+
+// Web3Forms Access Key: can be set via environment variable PUBLIC_WEB3FORMS_KEY or directly here
+const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE';
+---
+
+<section id="contact" class="bg-cloud py-16 md:py-24 border-b border-hairline relative scroll-mt-20">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Top Section Header -->
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-canvas border border-fog text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+        <span>Contact Us</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
+        Let's Work Together
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-charcoal leading-relaxed">
+        Looking for specialized cleaning support for your data center or mission-critical facility? Contact DarkGrid Operations to discuss your project requirements and explore how our services can support your operations.
+      </p>
+    </div>
+
+    <!-- Dual Column Grid: Contact Info (5 cols) + Quote Request Form (7 cols) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Left Column: Direct Contact Details & Credibility (5 cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Main Card -->
+        <div class="bg-canvas p-6 sm:p-8 rounded-[16px] border border-hairline shadow-soft-lift">
+          <div class="flex items-center gap-3 mb-6">
+            <img src="/assets/Emblema.png" alt="DarkGrid Emblema" class="w-12 h-12 object-contain" />
+            <div>
+              <h3 class="text-xl font-medium text-ink">DarkGrid Operations</h3>
+              <p class="text-xs text-graphite tracking-wider uppercase font-semibold">
+                Solutions for a Stronger Tomorrow
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <!-- Direct Phone -->
+            <a
+              href="tel:+17039390923"
+              class="flex items-start gap-4 p-4 rounded-[8px] bg-cloud hover:bg-primary-soft/40 border border-fog transition-colors group"
+            >
+              <div class="w-10 h-10 rounded-[6px] bg-primary-soft text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                <Phone class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-graphite uppercase tracking-wider block">Call Direct</span>
+                <span class="text-base font-semibold text-ink group-hover:text-primary transition-colors">
+                  +1 (703) 939-0923
+                </span>
+                <span class="text-xs text-graphite block mt-0.5">Direct Operations & Inquiries</span>
+              </div>
+            </a>
+
+            <!-- Direct Email -->
+            <a
+              href="mailto:info@darkgridoperations.com"
+              class="flex items-start gap-4 p-4 rounded-[8px] bg-cloud hover:bg-primary-soft/40 border border-fog transition-colors group"
+            >
+              <div class="w-10 h-10 rounded-[6px] bg-primary-soft text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                <Mail class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-graphite uppercase tracking-wider block">Email Inquiries</span>
+                <span class="text-base font-semibold text-ink group-hover:text-primary transition-colors break-all">
+                  info@darkgridoperations.com
+                </span>
+                <span class="text-xs text-graphite block mt-0.5">Rapid Scope Assessment Response</span>
+              </div>
+            </a>
+
+            <!-- Availability & SLA -->
+            <div class="flex items-start gap-4 p-4 rounded-[8px] bg-cloud border border-fog">
+              <div class="w-10 h-10 rounded-[6px] bg-cloud text-ink flex items-center justify-center shrink-0 border border-fog">
+                <Clock class="w-5 h-5" />
+              </div>
+              <div>
+                <span class="text-xs font-semibold text-graphite uppercase tracking-wider block">Deployment Availability</span>
+                <span class="text-sm font-medium text-ink">
+                  24/7 Facility Support Windows
+                </span>
+                <span class="text-xs text-graphite block mt-0.5">Tailored to maintenance & outage intervals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="mt-8 pt-6 border-t border-fog space-y-2.5">
+            <div class="flex items-center gap-2 text-xs text-charcoal">
+              <CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
+              <span>Full confidentiality & non-disclosure agreements compliant</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-charcoal">
+              <CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
+              <span>Certified technicians trained in high-density environments</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-charcoal">
+              <CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
+              <span>Dedicated site lead on every project engagement</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Interactive Quote Request Form (7 cols) -->
+      <div class="lg:col-span-7">
+        <div class="bg-canvas p-6 sm:p-10 rounded-[16px] border border-hairline shadow-soft-lift">
+          <div class="mb-6">
+            <h3 class="text-2xl font-medium text-ink">Request a Quote</h3>
+            <p class="text-xs sm:text-sm text-graphite mt-1">
+              Provide your facility details below. Our team coordinates directly with your project managers.
+            </p>
+          </div>
+
+          <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+            <!-- Web3Forms Integration -->
+            <input type="hidden" name="access_key" value={web3FormsKey} id="web3forms-key" />
+            <input type="hidden" name="subject" value="New Data Center Quote Request – DarkGrid Operations" />
+            <input type="hidden" name="from_name" value="DarkGrid Operations Website" />
+            <!-- Honeypot for Anti-Spam protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Full Name -->
+              <div>
+                <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+                  Full Name <span class="text-bloom-coral">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  placeholder="e.g. John Doe"
+                  class="w-full h-11 px-3.5 rounded-[4px] border border-fog bg-canvas text-ink text-sm focus:outline-none focus:border-ink transition-colors"
+                />
+              </div>
+
+              <!-- Company / Project Name -->
+              <div>
+                <label for="company" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+                  Company / Organization <span class="text-bloom-coral">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  required
+                  placeholder="e.g. Enterprise Data Systems"
+                  class="w-full h-11 px-3.5 rounded-[4px] border border-fog bg-canvas text-ink text-sm focus:outline-none focus:border-ink transition-colors"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Email -->
+              <div>
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+                  Work Email <span class="text-bloom-coral">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="name@company.com"
+                  class="w-full h-11 px-3.5 rounded-[4px] border border-fog bg-canvas text-ink text-sm focus:outline-none focus:border-ink transition-colors"
+                />
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+                  Phone Number <span class="text-bloom-coral">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="+1 (555) 000-0000"
+                  class="w-full h-11 px-3.5 rounded-[4px] border border-fog bg-canvas text-ink text-sm focus:outline-none focus:border-ink transition-colors"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Facility Type -->
+              <div>
+                <label for="facilityType" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+                  Facility Environment
+                </label>
+                <select
+                  id="facilityType"
+                  name="facilityType"
+                  class="w-full h-11 px-3.5 rounded-[4px] border border-fog bg-canvas text-ink text-sm focus:outline-none focus:border-ink transition-colors"
+                >
+                  <option value="Hyperscale Data Center">Hyperscale Data Center</option>
+                  <option value="Enterprise Data Center">Enterprise Data Center</option>
+                  <option value="Mission-Critical Facility">Mission-Critical Facility</option>
+                  <option value="Data Center Construction Project">Data Center Construction Project</option>
+                  <option value="Pre-Commissioning / Turnover">Pre-Commissioning / Turnover</option>
+                  <option value="Operational Live Data Center">Operational Live Data Center</option>
+                  <option value="Other Infrastructure">Other Infrastructure</option>
+                </select>
+              </div>
+
+              <!-- Primary Service Needed -->
+              <div>
+                <label for="serviceNeeded" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+                  Primary Service Needed
+                </label>
+                <select
+                  id="serviceNeeded"
+                  name="serviceNeeded"
+                  class="w-full h-11 px-3.5 rounded-[4px] border border-fog bg-canvas text-ink text-sm focus:outline-none focus:border-ink transition-colors"
+                >
+                  <option value="Specialized Equipment Cleaning">Specialized Equipment Cleaning</option>
+                  <option value="Construction & Post-Construction">Construction & Post-Construction</option>
+                  <option value="Pre-Commissioning & Turnover">Pre-Commissioning & Turnover Cleaning</option>
+                  <option value="Raised Floor & Subfloor Cleaning">Raised Floor & Subfloor Cleaning</option>
+                  <option value="Overhead & High-Level Cleaning">Overhead & High-Level Cleaning</option>
+                  <option value="Preventive & Routine Program">Preventive & Routine Program</option>
+                  <option value="Comprehensive / Customized Project">Comprehensive / Customized Project</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Project Details / Notes -->
+            <div>
+              <label for="details" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+                Project Scope & Estimated Timelines
+              </label>
+              <textarea
+                id="details"
+                name="details"
+                rows="4"
+                placeholder="Describe your facility requirements, square footage, sensitive equipment restrictions, target schedule or turnover milestones..."
+                class="w-full p-3.5 rounded-[4px] border border-fog bg-canvas text-ink text-sm focus:outline-none focus:border-ink transition-colors"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button (Primary Electric Blue, 4px rounded, uppercase tracking 0.7px) -->
+            <div class="pt-2">
+              <button
+                type="submit"
+                id="submit-quote-btn"
+                class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 h-12 bg-primary hover:bg-primary-deep text-white font-semibold text-xs tracking-[0.7px] uppercase rounded-[4px] shadow-sm transition-all duration-150 active:scale-[0.99] cursor-pointer"
+              >
+                <span>Request a Quote | Contact Our Team</span>
+                <Send class="w-4 h-4 ml-2" />
+              </button>
+            </div>
+
+            <!-- Feedback Notice -->
+            <div id="form-feedback" class="hidden p-4 rounded-[4px] text-xs sm:text-sm mt-3">
+              <!-- Dynamically populated -->
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('quote-form') as HTMLFormElement | null;
+  const feedback = document.getElementById('form-feedback');
+  const submitBtn = document.getElementById('submit-quote-btn');
+  const keyInput = document.getElementById('web3forms-key') as HTMLInputElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (!form || !submitBtn || !feedback) return;
+
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.setAttribute('disabled', 'true');
+    submitBtn.innerHTML = `<span>Sending Request...</span>`;
+
+    const formData = new FormData(form);
+
+    // Check if key is still the default placeholder
+    if (keyInput?.value === 'YOUR_ACCESS_KEY_HERE') {
+      feedback.className = 'p-4 rounded-[4px] bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm mt-3';
+      feedback.innerHTML = `
+        <div class="font-semibold text-amber-900">⚠️ Web3Forms Access Key Required</div>
+        <p class="mt-1">
+          Por favor, añade tu <strong>Access Key</strong> gratuita de Web3Forms en el archivo <code>.env</code> (como <code>PUBLIC_WEB3FORMS_KEY</code>) o en <code>ContactSection.astro</code> para empezar a recibir los correos en tu bandeja de entrada.
+        </p>
+      `;
+      submitBtn.removeAttribute('disabled');
+      submitBtn.innerHTML = originalBtnText;
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        feedback.className = 'p-4 rounded-[4px] bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs sm:text-sm mt-3';
+        feedback.innerHTML = `
+          <div class="flex items-center gap-2 font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+            <span>Thank you! Your quote request has been sent successfully.</span>
+          </div>
+          <p class="mt-1 text-emerald-800">
+            Our operations team will review your project details and contact you promptly at the provided email/phone.
+          </p>
+        `;
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Error sending request');
+      }
+    } catch (err: any) {
+      feedback.className = 'p-4 rounded-[4px] bg-rose-50 border border-rose-200 text-rose-900 text-xs sm:text-sm mt-3';
+      feedback.innerHTML = `
+        <div class="font-semibold">Unable to submit quote right now</div>
+        <p class="mt-1">
+          Please contact our team directly at <a href="mailto:info@darkgridoperations.com" class="underline font-semibold">info@darkgridoperations.com</a> or call <a href="tel:+17039390923" class="underline font-semibold">+1 (703) 939-0923</a>.
+        </p>
+      `;
+    } finally {
+      submitBtn.removeAttribute('disabled');
+      submitBtn.innerHTML = originalBtnText;
+    }
+  });
+</script>
+

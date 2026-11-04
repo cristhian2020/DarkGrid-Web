@@ -1,0 +1,120 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "DarkGrid Operations | Specialized Data Center Cleaning & Mission-Critical Facility Services",
+  description = "Specialized cleaning solutions for data centers and mission-critical infrastructure. Precision cleaning supporting construction, commissioning, turnover, and operational environments."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/Emblema.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#024ad8" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://darkgridoperations.com/" />
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://darkgridoperations.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/assets/darkgrid-logo.png" />
+    <meta property="og:site_name" content="DarkGrid Operations" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/assets/darkgrid-logo.png" />
+
+    <!-- Structured Data (JSON-LD) for Google Rich Results -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "DarkGrid Operations",
+      "description": "Specialized Data Center Cleaning & Mission-Critical Facility Services. Supporting construction, commissioning, project turnover, and ongoing operations.",
+      "url": "https://darkgridoperations.com",
+      "telephone": "+1-703-939-0923",
+      "email": "info@darkgridoperations.com",
+      "logo": "https://darkgridoperations.com/assets/darkgrid-logo.png",
+      "image": "https://darkgridoperations.com/assets/gente-limpiando.jpg",
+      "priceRange": "$$$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Data Center Specialized Cleaning Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Specialized Data Center Equipment Cleaning"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Construction & Post-Construction Cleaning"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pre-Commissioning & Turnover Cleaning"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Raised Floor & Subfloor Cleaning"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Overhead & High-Level Cleaning"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Preventive & Routine Data Center Cleaning"
+            }
+          }
+        ]
+      }
+    })} />
+
+    <!-- Google Fonts: Inter (weights 400, 500, 600, 700) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-canvas text-ink antialiased selection:bg-primary-soft selection:text-primary-deep flex flex-col min-h-screen">
+    <slot />
+  </body>
+</html>
