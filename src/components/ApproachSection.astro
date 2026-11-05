@@ -1,6 +1,12 @@
 ---
 import { ShieldCheck, MessageSquareText, Users, FileSpreadsheet, CheckCircle2 } from 'lucide-astro';
 
+interface Props {
+  showHeader?: boolean;
+}
+
+const { showHeader = true } = Astro.props;
+
 const approachSteps = [
   {
     step: '01',
@@ -37,17 +43,19 @@ const approachSteps = [
   <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Header -->
-    <div class="max-w-3xl mb-12 md:mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-canvas border border-fog text-xs font-semibold uppercase tracking-wider text-primary mb-3">
-        <span>Our Approach</span>
+    {showHeader && (
+      <div class="max-w-4xl mb-12 md:mb-16">
+        <div class="inline-flex items-center px-4 py-1.5 rounded-[6px] bg-canvas border border-fog text-sm font-bold uppercase tracking-wider text-corporate mb-4 shadow-2xs">
+          <span>Our Approach</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-[54px] font-medium tracking-tight text-ink leading-[1.08]">
+          Safety First. Quality Always.
+        </h2>
+        <p class="mt-4 text-lg sm:text-xl lg:text-[22px] text-charcoal font-normal leading-relaxed">
+          Our work is guided by a structured approach to safety, planning, and communication. In mission-critical environments, execution discipline is non-negotiable.
+        </p>
       </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
-        Safety First. Quality Always.
-      </h2>
-      <p class="mt-4 text-base sm:text-lg text-charcoal leading-relaxed">
-        Our work is guided by a structured approach to safety, planning, and communication. In mission-critical environments, execution discipline is non-negotiable.
-      </p>
-    </div>
+    )}
 
     <!-- 2 Column Section: Approach Cards + Visual Showcase -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
@@ -57,32 +65,32 @@ const approachSteps = [
         {approachSteps.map((step) => {
           const Icon = step.icon;
           return (
-            <div class="bg-canvas p-6 rounded-[16px] border border-hairline shadow-soft-lift flex flex-col justify-between relative overflow-hidden group hover:border-primary/40 transition-colors">
+            <div class="bg-canvas p-6 sm:p-7 rounded-[16px] border border-hairline shadow-soft-lift flex flex-col justify-between relative overflow-hidden group hover:border-corporate transition-colors">
               <div>
                 <div class="flex items-center justify-between mb-4">
-                  <div class="w-10 h-10 rounded-[8px] bg-primary-soft text-primary flex items-center justify-center">
-                    <Icon class="w-5 h-5" />
+                  <div class="w-12 h-12 rounded-[10px] bg-primary-soft text-corporate flex items-center justify-center">
+                    <Icon class="w-6 h-6" />
                   </div>
-                  <span class="text-xs font-mono font-bold text-graphite bg-cloud px-2 py-0.5 rounded">
+                  <span class="text-xs sm:text-sm font-mono font-bold text-navy bg-cloud px-2.5 py-1 rounded">
                     Phase {step.step}
                   </span>
                 </div>
 
-                <span class="text-[11px] font-semibold tracking-wider uppercase text-primary">
+                <span class="text-xs font-bold tracking-wider uppercase text-corporate">
                   {step.tag}
                 </span>
 
-                <h3 class="text-lg font-medium text-ink mt-1 mb-2">
+                <h3 class="text-xl sm:text-2xl font-medium text-ink mt-1.5 mb-2.5 leading-snug">
                   {step.title}
                 </h3>
 
-                <p class="text-xs sm:text-sm text-charcoal leading-relaxed">
+                <p class="text-sm sm:text-base text-charcoal leading-relaxed">
                   {step.desc}
                 </p>
               </div>
 
-              <div class="mt-5 pt-3 border-t border-fog flex items-center gap-1.5 text-xs text-graphite">
-                <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+              <div class="mt-6 pt-3.5 border-t border-fog flex items-center gap-2 text-xs sm:text-sm text-graphite font-medium">
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Strict procedural adherence</span>
               </div>
             </div>
@@ -92,21 +100,21 @@ const approachSteps = [
 
       <!-- Right: Supporting Photo with Frame (5 cols) -->
       <div class="lg:col-span-5 flex flex-col">
-        <div class="relative h-full min-h-[380px] rounded-[16px] overflow-hidden bg-canvas shadow-soft-lift border border-fog group">
+        <div class="relative h-full min-h-[420px] rounded-[16px] overflow-hidden bg-canvas shadow-soft-lift border border-fog group">
           <img
             src="/assets/personal-working.png"
             alt="DarkGrid Operations personnel coordinating mission-critical work"
             class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-102"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent flex flex-col justify-end p-6 text-white">
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-primary text-white text-[11px] font-semibold tracking-wider uppercase mb-2.5 w-fit shadow-xs">
-              <ShieldCheck class="w-3.5 h-3.5" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/40 to-transparent flex flex-col justify-end p-6 sm:p-8 text-white">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[4px] bg-corporate text-white text-xs font-bold tracking-wider uppercase mb-3 w-fit shadow-xs">
+              <ShieldCheck class="w-4 h-4 text-cyan" />
               <span>Field Execution Standards</span>
             </div>
-            <h4 class="text-lg font-medium text-white leading-snug">
+            <h4 class="text-xl sm:text-2xl font-medium text-white leading-snug">
               Coordinated Operations with Zero Incident Goal
             </h4>
-            <p class="text-xs text-white/90 mt-1.5 leading-relaxed">
+            <p class="text-sm sm:text-base text-white/90 mt-2 leading-relaxed">
               Every technician operates under verified scope boundaries with certified PPE and equipment isolation protocols.
             </p>
           </div>

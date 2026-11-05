@@ -8,6 +8,12 @@ import {
   ArrowRight
 } from 'lucide-astro';
 
+interface Props {
+  showHeader?: boolean;
+}
+
+const { showHeader = true } = Astro.props;
+
 const environments = [
   {
     title: 'Hyperscale & Enterprise Data Centers',
@@ -51,39 +57,41 @@ const environments = [
   <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Header -->
-    <div class="max-w-3xl mb-12 md:mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-cloud border border-fog text-xs font-semibold uppercase tracking-wider text-primary mb-3">
-        <span>Sectors & Applications</span>
+    {showHeader && (
+      <div class="max-w-4xl mb-12 md:mb-16">
+        <div class="inline-flex items-center px-4 py-1.5 rounded-[6px] bg-cloud border border-fog text-sm font-bold uppercase tracking-wider text-corporate mb-4 shadow-2xs">
+          <span>Sectors & Applications</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-[54px] font-medium tracking-tight text-ink leading-[1.08]">
+          Industries & Environments We Support
+        </h2>
+        <p class="mt-4 text-lg sm:text-xl lg:text-[22px] text-charcoal font-normal leading-relaxed">
+          Engineered for facilities where cleanliness directly impacts operational uptime, thermal efficiency, and warranty compliance.
+        </p>
       </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
-        Industries & Environments We Support
-      </h2>
-      <p class="mt-4 text-base sm:text-lg text-charcoal">
-        Engineered for facilities where cleanliness directly impacts operational uptime, thermal efficiency, and warranty compliance.
-      </p>
-    </div>
+    )}
 
     <!-- Environments Grid (5 items: 3 in top row, 2 in bottom row centered or 5-grid) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {environments.map((env, index) => {
         const Icon = env.icon;
         return (
-          <div class={`bg-canvas p-6 sm:p-7 rounded-[16px] border border-hairline shadow-soft-lift shadow-soft-lift-hover flex flex-col justify-between group ${index === 3 ? 'lg:col-span-1' : ''}`}>
+          <div class={`bg-canvas p-7 sm:p-8 rounded-[16px] border border-hairline shadow-soft-lift shadow-soft-lift-hover flex flex-col justify-between group ${index === 3 ? 'lg:col-span-1' : ''}`}>
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 rounded-[8px] bg-cloud group-hover:bg-primary-soft text-ink group-hover:text-primary flex items-center justify-center transition-colors border border-fog">
-                  <Icon class="w-6 h-6" />
+              <div class="flex items-center justify-between mb-5">
+                <div class="w-14 h-14 rounded-[10px] bg-cloud group-hover:bg-primary-soft text-navy group-hover:text-corporate flex items-center justify-center transition-colors border border-fog">
+                  <Icon class="w-7 h-7" />
                 </div>
-                <span class="text-[11px] font-semibold uppercase tracking-wider text-graphite bg-cloud px-2.5 py-1 rounded-[4px] border border-fog">
+                <span class="text-xs font-bold uppercase tracking-wider text-navy bg-cloud px-3 py-1 rounded-[4px] border border-fog">
                   {env.badge}
                 </span>
               </div>
 
-              <h3 class="text-lg sm:text-xl font-medium text-ink mb-3 leading-snug">
+              <h3 class="text-xl sm:text-2xl font-medium text-ink mb-3 leading-snug">
                 {env.title}
               </h3>
 
-              <p class="text-xs sm:text-sm text-charcoal leading-relaxed mb-6">
+              <p class="text-sm sm:text-base text-charcoal leading-relaxed mb-6">
                 {env.description}
               </p>
             </div>
