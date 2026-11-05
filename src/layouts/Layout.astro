@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -19,6 +20,9 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/Emblema.png" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Astro ClientRouter for Instant Zero-Lag Page Transitions -->
+    <ClientRouter />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -114,7 +118,7 @@ const {
       rel="stylesheet"
     />
   </head>
-  <body class="bg-canvas text-ink antialiased selection:bg-primary-soft selection:text-primary-deep flex flex-col min-h-screen">
+  <body data-astro-prefetch="hover" class="bg-canvas text-ink antialiased selection:bg-primary-soft selection:text-primary-deep flex flex-col min-h-screen">
     <slot />
   </body>
 </html>

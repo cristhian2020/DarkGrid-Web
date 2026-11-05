@@ -98,28 +98,34 @@ const navLinks = [
 </header>
 
 <script>
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const iconOpen = document.getElementById('menu-icon-open');
-  const iconClose = document.getElementById('menu-icon-close');
-  const navLinks = document.querySelectorAll('.mobile-nav-link');
+  function setupNavbar() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
 
-  function toggleMenu() {
-    const isExpanded = menuBtn?.getAttribute('aria-expanded') === 'true';
-    menuBtn?.setAttribute('aria-expanded', String(!isExpanded));
-    menu?.classList.toggle('hidden');
-    iconOpen?.classList.toggle('hidden');
-    iconClose?.classList.toggle('hidden');
+    if (!menuBtn || !menu) return;
+
+    function toggleMenu() {
+      const isExpanded = menuBtn?.getAttribute('aria-expanded') === 'true';
+      menuBtn?.setAttribute('aria-expanded', String(!isExpanded));
+      menu?.classList.toggle('hidden');
+      iconOpen?.classList.toggle('hidden');
+      iconClose?.classList.toggle('hidden');
+    }
+
+    menuBtn.onclick = toggleMenu;
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (!menu?.classList.contains('hidden')) {
+          toggleMenu();
+        }
+      });
+    });
   }
 
-  menuBtn?.addEventListener('click', toggleMenu);
-
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      if (!menu?.classList.contains('hidden')) {
-        toggleMenu();
-      }
-    });
-  });
+  document.addEventListener('astro:page-load', setupNavbar);
 </script>
 
