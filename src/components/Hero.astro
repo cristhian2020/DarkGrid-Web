@@ -15,16 +15,36 @@ import { Shield, Sparkles, CheckCircle, ArrowRight, PhoneCall, Layers, Server } 
       <!-- Left Column: Copy & Value Proposition (7 cols) -->
       <div class="lg:col-span-7 flex flex-col items-start space-y-6">
         
+        <!-- Prominent Brand Lockup (Logo Enorme como solicitó el cliente) -->
+        <div class="flex items-center gap-4 p-2 sm:p-2.5 rounded-[12px] bg-canvas border border-fog shadow-xs">
+          <img
+            src="/assets/Emblema.png"
+            alt="DarkGrid Operations Emblem"
+            class="h-16 w-16 sm:h-20 sm:w-20 object-contain drop-shadow-sm shrink-0"
+          />
+          <div class="flex flex-col">
+            <span class="text-ink font-bold tracking-wider text-2xl sm:text-3xl lg:text-[34px] leading-tight">
+              DARKGRID
+            </span>
+            <span class="text-xs sm:text-sm font-semibold tracking-[0.25em] text-corporate uppercase leading-none">
+              OPERATIONS
+            </span>
+            <span class="text-[11px] text-graphite font-medium mt-1">
+              Specialized Data Center & Mission-Critical Cleaning
+            </span>
+          </div>
+        </div>
+
         <!-- Eyebrow Badge Pill -->
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cloud border border-fog text-xs font-semibold uppercase tracking-wider text-charcoal">
           <span>Mission-Critical Facility Services</span>
           <span class="text-steel">|</span>
-          <span class="text-primary font-bold">Solutions for a Stronger Tomorrow</span>
+          <span class="text-corporate font-bold">Solutions for a Stronger Tomorrow</span>
         </div>
 
         <!-- Main Display Headline (weight 500 as per design.md) -->
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[62px] font-medium tracking-tight text-ink leading-[1.05]">
-          Precision Cleaning for <span class="text-primary relative inline-block">Mission-Critical<span class="absolute bottom-1 left-0 w-full h-[3px] bg-primary/20"></span></span> Environments
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[58px] font-medium tracking-tight text-ink leading-[1.08]">
+          Precision Cleaning for <span class="text-corporate relative inline-block">Mission-Critical<span class="absolute bottom-1 left-0 w-full h-[3px] bg-cyan/40"></span></span> Environments
         </h1>
 
         <!-- Subtitle & Lead Paragraph -->
@@ -63,16 +83,16 @@ import { Shield, Sparkles, CheckCircle, ArrowRight, PhoneCall, Layers, Server } 
         <!-- Call to Action Buttons -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
           <a
-            href="#contact"
-            class="inline-flex items-center justify-center px-7 py-3 h-12 bg-primary hover:bg-primary-deep text-white font-semibold text-xs sm:text-sm tracking-[0.7px] uppercase rounded-[4px] shadow-sm transition-all duration-150 active:scale-[0.98] group"
+            href="/#contact"
+            class="inline-flex items-center justify-center px-7 py-3 h-12 bg-corporate hover:bg-navy text-white font-semibold text-xs sm:text-sm tracking-[0.7px] uppercase rounded-[4px] shadow-sm transition-all duration-150 active:scale-[0.98] group"
           >
             <span>Request a Quote</span>
             <ArrowRight class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
           </a>
 
           <a
-            href="#services"
-            class="inline-flex items-center justify-center px-6 py-3 h-12 bg-canvas hover:bg-cloud text-ink border border-ink/20 hover:border-ink font-semibold text-xs sm:text-sm tracking-[0.7px] uppercase rounded-[4px] transition-all duration-150"
+            href="/services"
+            class="inline-flex items-center justify-center px-6 py-3 h-12 bg-canvas hover:bg-cloud text-ink border border-ink/20 hover:border-corporate font-semibold text-xs sm:text-sm tracking-[0.7px] uppercase rounded-[4px] transition-all duration-150"
           >
             <span>Explore Services</span>
           </a>

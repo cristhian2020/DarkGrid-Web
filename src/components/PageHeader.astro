@@ -1,0 +1,70 @@
+---
+import { ArrowLeft, ArrowRight, Home } from 'lucide-astro';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  badge?: string;
+}
+
+const { eyebrow, title, description, badge } = Astro.props;
+---
+
+<div class="relative bg-navy text-white py-14 sm:py-16 md:py-20 border-b border-white/10 overflow-hidden">
+  <!-- Subtle Grid & Radial Glow with Brand Palette -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#0088f5 1px, transparent 1px); background-size: 28px 28px;"></div>
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-electric/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-xs text-white/60 mb-6 font-medium">
+      <a href="/" class="hover:text-cyan transition-colors flex items-center gap-1.5">
+        <Home class="w-3.5 h-3.5" />
+        <span>Home</span>
+      </a>
+      <span class="text-white/30">/</span>
+      <span class="text-white/90">{title}</span>
+    </nav>
+
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 text-cyan text-xs font-semibold uppercase tracking-wider mb-3 border border-white/10">
+          <span>{eyebrow}</span>
+          {badge && (
+            <>
+              <span class="text-white/40">•</span>
+              <span class="text-white font-normal">{badge}</span>
+            </>
+          )}
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-tight">
+          {title}
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-white/80 leading-relaxed">
+          {description}
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 shrink-0">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/15 text-white text-xs font-semibold tracking-[0.7px] uppercase rounded-[4px] border border-white/15 transition-colors"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          <span>Back to Home</span>
+        </a>
+
+        <a
+          href="/#contact"
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-electric hover:bg-corporate text-white text-xs font-semibold tracking-[0.7px] uppercase rounded-[4px] shadow-sm transition-colors"
+        >
+          <span>Request Quote</span>
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

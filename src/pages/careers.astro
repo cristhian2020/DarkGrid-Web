@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UtilityStrip from '../components/UtilityStrip.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CareersSection from '../components/CareersSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Careers & Opportunities | DarkGrid Operations"
+  description="Build your career with DarkGrid Operations. Opportunities for Data Center Cleaning Technicians, Supervisors, Site Leads, and Field Operations Personnel."
+>
+  <UtilityStrip />
+  <Navbar />
+  
+  <main>
+    <PageHeader
+      eyebrow="Join Our Team"
+      title="Careers & Opportunities"
+      badge="Now Hiring"
+      description="At DarkGrid Operations, we value safety, professionalism, teamwork, and attention to detail. We welcome motivated individuals interested in supporting mission-critical data center projects."
+    />
+
+    <!-- The complete Careers Section -->
+    <CareersSection />
+  </main>
+
+  <Footer />
+</Layout>
+

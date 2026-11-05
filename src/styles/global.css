@@ -1,27 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #024ad8;
-  --color-primary-bright: #296ef9;
-  --color-primary-deep: #0e3191;
-  --color-primary-soft: #c9e0fc;
+  /* Paleta oficial DarkGrid Operations */
+  --color-navy: #061b35;          /* Azul marino profundo */
+  --color-corporate: #0755a5;     /* Azul corporativo */
+  --color-electric: #0088f5;      /* Azul eléctrico */
+  --color-cyan: #00b9f2;          /* Cian brillante */
+  --color-silver: #bfc3cc;        /* Plateado */
+
+  /* Mapeo del sistema a la paleta oficial */
+  --color-primary: #0755a5;       /* Azul corporativo */
+  --color-primary-bright: #0088f5;/* Azul eléctrico */
+  --color-primary-deep: #061b35;  /* Azul marino profundo */
+  --color-primary-cyan: #00b9f2;  /* Cian brillante */
+  --color-primary-soft: #eaf4fd;  /* Fondo suave azul */
   
   --color-canvas: #ffffff;
   --color-paper: #ffffff;
-  --color-cloud: #f7f7f7;
-  --color-fog: #e8e8e8;
-  --color-steel: #c2c2c2;
-  --color-hairline: #e8e8e8;
+  --color-cloud: #f8fafc;
+  --color-fog: #e8ecf2;
+  --color-steel: #bfc3cc;
+  --color-hairline: #e2e8f0;
   
-  --color-ink: #1a1a1a;
-  --color-ink-deep: #000000;
-  --color-ink-soft: #292929;
+  --color-ink: #061b35;           /* Azul marino profundo como tono base de texto */
+  --color-ink-deep: #030d1a;
+  --color-ink-soft: #0b2545;
   --color-on-ink: #ffffff;
-  --color-charcoal: #3d3d3d;
-  --color-graphite: #636363;
+  --color-charcoal: #334155;
+  --color-graphite: #64748b;
 
-  --color-bloom-coral: #ff5050;
-  --color-storm-deep: #356373;
+  --color-bloom-coral: #ef4444;
+  --color-storm-deep: #0755a5;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }

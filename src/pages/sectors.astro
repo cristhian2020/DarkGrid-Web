@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UtilityStrip from '../components/UtilityStrip.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHeader from '../components/PageHeader.astro';
+import IndustriesSection from '../components/IndustriesSection.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Sectors & Applications | DarkGrid Operations — Supported Environments"
+  description="Specialized cleaning support for Hyperscale & Enterprise Data Centers, Mission-Critical Facilities, Data Center Construction, and Turnover Commissioning."
+>
+  <UtilityStrip />
+  <Navbar />
+  
+  <main>
+    <PageHeader
+      eyebrow="Sectors & Applications"
+      title="Industries & Environments We Support"
+      badge="Specialized Scope"
+      description="Engineered for facilities where cleanliness directly impacts operational uptime, thermal efficiency, and warranty compliance."
+    />
+
+    <!-- The complete Environments Section -->
+    <IndustriesSection />
+
+    <!-- Why DarkGrid Operational Advantages -->
+    <WhyChooseUs />
+
+    <!-- Direct Quote Form -->
+    <ContactSection />
+  </main>
+
+  <Footer />
+</Layout>
+

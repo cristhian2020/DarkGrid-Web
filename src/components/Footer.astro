@@ -2,34 +2,34 @@
 import { ShieldCheck, Mail, Phone, ArrowUp, Sparkles } from 'lucide-astro';
 
 const servicesLinks = [
-  { href: '#services', label: 'Specialized Equipment Cleaning' },
-  { href: '#services', label: 'Construction & Post-Construction' },
-  { href: '#services', label: 'Pre-Commissioning & Turnover' },
-  { href: '#services', label: 'Raised Floor & Subfloor Cleaning' },
-  { href: '#services', label: 'Overhead & High-Level Cleaning' },
-  { href: '#services', label: 'Preventive & Routine Cleaning' },
-  { href: '#services', label: 'Customized Project Support' },
+  { href: '/services', label: 'Specialized Equipment Cleaning' },
+  { href: '/services', label: 'Construction & Post-Construction' },
+  { href: '/services', label: 'Pre-Commissioning & Turnover' },
+  { href: '/services', label: 'Raised Floor & Subfloor Cleaning' },
+  { href: '/services', label: 'Overhead & High-Level Cleaning' },
+  { href: '/services', label: 'Preventive & Routine Cleaning' },
+  { href: '/services', label: 'Customized Project Support' },
 ];
 
 const companyLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About DarkGrid' },
-  { href: '#approach', label: 'Our Approach' },
-  { href: '#why-us', label: 'Why DarkGrid' },
-  { href: '#careers', label: 'Careers & Opportunities' },
-  { href: '#contact', label: 'Request a Quote' },
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Our Services' },
+  { href: '/approach', label: 'Our Approach' },
+  { href: '/sectors', label: 'Sectors & Applications' },
+  { href: '/careers', label: 'Careers & Opportunities' },
+  { href: '/#contact', label: 'Request a Quote' },
 ];
 
 const environmentLinks = [
-  { href: '#industries', label: 'Hyperscale & Enterprise' },
-  { href: '#industries', label: 'Mission-Critical Facilities' },
-  { href: '#industries', label: 'Construction Sites' },
-  { href: '#industries', label: 'Commissioning & Handover' },
-  { href: '#industries', label: 'Live Data Centers' },
+  { href: '/sectors', label: 'Hyperscale & Enterprise' },
+  { href: '/sectors', label: 'Mission-Critical Facilities' },
+  { href: '/sectors', label: 'Construction Sites' },
+  { href: '/sectors', label: 'Commissioning & Handover' },
+  { href: '/sectors', label: 'Live Data Centers' },
 ];
 ---
 
-<footer class="bg-ink text-white/90 pt-16 pb-12 border-t border-white/10">
+<footer class="bg-navy text-white/90 pt-16 pb-12 border-t border-white/10">
   <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Main Footer Grid (5 Columns on Desktop) -->
@@ -37,13 +37,13 @@ const environmentLinks = [
       
       <!-- Column 1: Brand Info & Identity (4 cols) -->
       <div class="lg:col-span-4 space-y-4">
-        <a href="#home" class="inline-flex items-center gap-3">
-          <img src="/assets/Logo.jpg" alt="DarkGrid Operations Logo" class="h-10 w-10 object-contain" />
+        <a href="/" class="inline-flex items-center gap-3.5 group">
+          <img src="/assets/Emblema.png" alt="DarkGrid Operations Logo" class="h-14 w-14 sm:h-16 sm:w-16 object-contain group-hover:scale-105 transition-transform" />
           <div class="flex flex-col">
-            <span class="text-white font-semibold tracking-wider text-lg leading-tight">
+            <span class="text-white font-bold tracking-wider text-xl sm:text-2xl leading-none">
               DARKGRID
             </span>
-            <span class="text-[11px] font-medium tracking-[0.2em] text-white/60 uppercase leading-none">
+            <span class="text-[11px] sm:text-xs font-semibold tracking-[0.28em] text-cyan uppercase mt-1 leading-none">
               OPERATIONS
             </span>
           </div>
@@ -53,18 +53,18 @@ const environmentLinks = [
           Specialized Data Center Cleaning & Mission-Critical Facility Services. Delivering safe work practices, equipment protection, and operational excellence.
         </p>
 
-        <div class="pt-2 text-xs text-primary-bright font-semibold tracking-wider uppercase flex items-center gap-2">
-          <Sparkles class="w-3.5 h-3.5" />
+        <div class="pt-2 text-xs text-cyan font-semibold tracking-wider uppercase flex items-center gap-2">
+          <Sparkles class="w-3.5 h-3.5 text-cyan" />
           <span>Solutions for a Stronger Tomorrow</span>
         </div>
 
         <div class="pt-3 space-y-2 text-xs text-white/80">
           <div class="flex items-center gap-2">
-            <Phone class="w-3.5 h-3.5 text-primary-bright" />
+            <Phone class="w-3.5 h-3.5 text-cyan" />
             <a href="tel:+17039390923" class="hover:text-white transition-colors">+1 (703) 939-0923</a>
           </div>
           <div class="flex items-center gap-2">
-            <Mail class="w-3.5 h-3.5 text-primary-bright" />
+            <Mail class="w-3.5 h-3.5 text-cyan" />
             <a href="mailto:info@darkgridoperations.com" class="hover:text-white transition-colors break-all">info@darkgridoperations.com</a>
           </div>
         </div>

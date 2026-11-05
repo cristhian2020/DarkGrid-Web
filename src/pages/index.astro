@@ -3,13 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import UtilityStrip from '../components/UtilityStrip.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import CorePillarsSection from '../components/CorePillarsSection.astro';
 import AboutSection from '../components/AboutSection.astro';
-import ServicesSection from '../components/ServicesSection.astro';
-import ApproachSection from '../components/ApproachSection.astro';
-import IndustriesSection from '../components/IndustriesSection.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
-import SafetyCommitment from '../components/SafetyCommitment.astro';
-import CareersSection from '../components/CareersSection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -21,36 +17,24 @@ import Footer from '../components/Footer.astro';
   <!-- Top Utility Strip -->
   <UtilityStrip />
 
-  <!-- Main Navigation Header -->
+  <!-- Main Navigation Header with Enlarged Logo -->
   <Navbar />
 
-  <!-- Main Content Flow -->
+  <!-- Main Content Flow: Streamlined, Clean and Fast to Navigate -->
   <main>
-    <!-- Hero Section -->
+    <!-- 1. Hero Section with Large Brand Lockup & Value Pillars -->
     <Hero />
 
-    <!-- About Us: Who We Are, Mission & Vision -->
+    <!-- 2. The 3 Big, Bold Interactive Pillars: Services, Approach, Sectors -->
+    <CorePillarsSection />
+
+    <!-- 3. About Us: Who We Are, Our Mission & Vision -->
     <AboutSection />
 
-    <!-- Our 7 Core Services -->
-    <ServicesSection />
-
-    <!-- Our Approach: Safety First. Quality Always. -->
-    <ApproachSection />
-
-    <!-- Industries & Environments We Support -->
-    <IndustriesSection />
-
-    <!-- Why DarkGrid? Key Differentiators -->
+    <!-- 4. Why DarkGrid? Core Operational Values -->
     <WhyChooseUs />
 
-    <!-- Dark Navy Slab: Commitment to Safety & Quality -->
-    <SafetyCommitment />
-
-    <!-- Careers & Opportunities -->
-    <CareersSection />
-
-    <!-- Contact Us & Request a Quote Form -->
+    <!-- 5. Contact Us & Request a Quote Form -->
     <ContactSection />
   </main>
 

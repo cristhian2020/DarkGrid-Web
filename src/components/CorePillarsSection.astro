@@ -1,0 +1,133 @@
+---
+import { Server, ShieldCheck, Building2, ArrowRight, Sparkles } from 'lucide-astro';
+
+const pillars = [
+  {
+    id: 'services',
+    title: 'Our Services',
+    subtitle: '7 Specialized Cleaning Solutions',
+    description: 'Precision cleaning of equipment exteriors, UPS systems, server racks, raised floors, overhead cable trays, and facility turnover.',
+    href: '/services',
+    icon: Server,
+    colorTheme: {
+      borderHover: 'hover:border-corporate',
+      iconBg: 'bg-corporate',
+      iconColor: 'text-white',
+      badgeBg: 'bg-primary-soft text-corporate',
+      accentDot: 'bg-electric',
+      button: 'bg-corporate hover:bg-navy text-white',
+    },
+    highlights: ['Equipment Exteriors', 'Subfloor & Plenum', 'Post-Construction & Turnover'],
+  },
+  {
+    id: 'approach',
+    title: 'Our Approach',
+    subtitle: 'Safety First. Quality Always.',
+    description: 'Strict execution discipline guided by safety planning, daily toolbox talks, active project coordination, and comprehensive work documentation.',
+    href: '/approach',
+    icon: ShieldCheck,
+    colorTheme: {
+      borderHover: 'hover:border-electric',
+      iconBg: 'bg-navy',
+      iconColor: 'text-cyan',
+      badgeBg: 'bg-navy/10 text-navy',
+      accentDot: 'bg-corporate',
+      button: 'bg-navy hover:bg-corporate text-white',
+    },
+    highlights: ['Safety Planning & JHA', 'Daily Briefings', 'Daily Activity Records'],
+  },
+  {
+    id: 'sectors',
+    title: 'Sectors & Applications',
+    subtitle: 'Environments We Support',
+    description: 'Tailored controlled solutions for Hyperscale data centers, enterprise server halls, construction projects, and live operational facilities.',
+    href: '/sectors',
+    icon: Building2,
+    colorTheme: {
+      borderHover: 'hover:border-cyan',
+      iconBg: 'bg-gradient-to-br from-corporate to-electric',
+      iconColor: 'text-white',
+      badgeBg: 'bg-cyan/15 text-navy font-semibold',
+      accentDot: 'bg-cyan',
+      button: 'bg-electric hover:bg-corporate text-white',
+    },
+    highlights: ['Hyperscale & Enterprise', 'Mission-Critical Rooms', 'Turnover Commissioning'],
+  },
+];
+---
+
+<section class="bg-cloud py-16 md:py-24 border-b border-hairline relative">
+  <div class="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Eyebrow & Title -->
+    <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-medium tracking-tight text-ink leading-tight">
+        Specialized Infrastructure Pillars
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-charcoal">
+        Click any core sector below to explore complete technical details, approved work scopes, and operational procedures.
+      </p>
+    </div>
+
+    <!-- 3 Big, Bold Interactive Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {pillars.map((pillar) => {
+        const Icon = pillar.icon;
+        return (
+          <a
+            href={pillar.href}
+            class={`group bg-canvas rounded-[16px] p-8 border border-hairline shadow-soft-lift shadow-soft-lift-hover flex flex-col justify-between transition-all duration-300 relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary ${pillar.colorTheme.borderHover}`}
+          >
+            <!-- Top Accent Bar -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-corporate via-electric to-cyan opacity-80 group-hover:opacity-100 transition-opacity"></div>
+
+            <div>
+              <!-- Big, Eye-Catching Icon (48px - 64px container) -->
+              <div class="flex items-center justify-between mb-6">
+                <div class={`w-16 h-16 rounded-[12px] ${pillar.colorTheme.iconBg} ${pillar.colorTheme.iconColor} flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon class="w-8 h-8" />
+                </div>
+                <span class={`text-[11px] uppercase tracking-wider px-3 py-1 rounded-[4px] ${pillar.colorTheme.badgeBg}`}>
+                  Explore Section
+                </span>
+              </div>
+
+              <!-- Title & Subtitle -->
+              <h3 class="text-2xl font-medium text-ink group-hover:text-corporate transition-colors leading-snug">
+                {pillar.title}
+              </h3>
+              <p class="text-xs font-semibold uppercase tracking-wider text-corporate mt-1 mb-4">
+                {pillar.subtitle}
+              </p>
+
+              <!-- Description -->
+              <p class="text-sm text-charcoal leading-relaxed mb-6">
+                {pillar.description}
+              </p>
+
+              <!-- Highlights Pills -->
+              <div class="space-y-2 mb-8">
+                {pillar.highlights.map((item) => (
+                  <div class="flex items-center gap-2 text-xs text-graphite">
+                    <span class={`w-2 h-2 rounded-full ${pillar.colorTheme.accentDot} shrink-0`}></span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Big Action Button at bottom -->
+            <div class="pt-4 border-t border-fog">
+              <div class={`w-full py-3 px-5 rounded-[4px] text-xs font-semibold uppercase tracking-[0.7px] flex items-center justify-between ${pillar.colorTheme.button} transition-colors shadow-xs`}>
+                <span>View Full Details</span>
+                <ArrowRight class="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+  </div>
+</section>
+

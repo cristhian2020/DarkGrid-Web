@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UtilityStrip from '../components/UtilityStrip.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ApproachSection from '../components/ApproachSection.astro';
+import SafetyCommitment from '../components/SafetyCommitment.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Our Approach | DarkGrid Operations — Safety First. Quality Always."
+  description="Discover our structured approach to safety, planning, and communication in mission-critical data center environments."
+>
+  <UtilityStrip />
+  <Navbar />
+  
+  <main>
+    <PageHeader
+      eyebrow="Methodology & Protocols"
+      title="Our Approach"
+      badge="Safety First. Quality Always."
+      description="Our work is guided by a structured approach to safety, planning, and communication. In mission-critical environments, execution discipline is non-negotiable."
+    />
+
+    <!-- The complete Approach Section with 4 pillars & photo -->
+    <ApproachSection />
+
+    <!-- Our Commitment to Safety & Quality Dark Slab -->
+    <SafetyCommitment />
+
+    <!-- Direct Quote Form -->
+    <ContactSection />
+  </main>
+
+  <Footer />
+</Layout>
+

@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UtilityStrip from '../components/UtilityStrip.astro';
+import Navbar from '../components/Navbar.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Our Services | DarkGrid Operations — Specialized Data Center Cleaning"
+  description="Explore our 7 specialized cleaning solutions for data centers and mission-critical facilities: equipment cleaning, subfloors, overhead raceways, and turnover commissioning."
+>
+  <UtilityStrip />
+  <Navbar />
+  
+  <main>
+    <PageHeader
+      eyebrow="Specialized Capabilities"
+      title="Our Services"
+      badge="7 Comprehensive Programs"
+      description="Professional cleaning solutions engineered for data centers, high-density server halls, and mission-critical facilities. Operating within approved work scopes and strict equipment restrictions."
+    />
+
+    <!-- The complete, detailed 7 Services Section -->
+    <ServicesSection />
+
+    <!-- Direct Quote Form -->
+    <ContactSection />
+  </main>
+
+  <Footer />
+</Layout>
+
